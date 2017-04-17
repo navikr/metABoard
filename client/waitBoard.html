@@ -1,0 +1,11 @@
+<template name="waitBoard">
+  <div id="waitingBoard" class="col-sm-4 col-md-4">
+    <h3>Wait Queue</h3>
+    <ul id="wcard">
+      {{#each waitCards}}
+         {{> waitCard}}
+        {{/each}}
+    </ul>
+
+  </div>
+</template>

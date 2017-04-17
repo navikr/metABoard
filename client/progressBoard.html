@@ -1,0 +1,11 @@
+<template name="progressBoard">
+
+  <div id="progressBoard" class="col-sm-4 col-md-4">
+    <h3>In-Progress</h3>
+    <ul id="pcard">
+          {{#each progressCards}}
+          {{> progressCard}}
+        {{/each}}
+    </ul>
+  </div>
+</template>

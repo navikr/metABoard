@@ -1,0 +1,26 @@
+<template name="reportsOverview">
+  <div class="col-sm-10 col-sm-offset-2  col-md-11 col-md-offset-1 main">
+<table class="table table-inverse">
+<thead>
+<tr>
+  <th>Case</th>
+  <th>Customer</th>
+  <th>Progress Duration</th>
+  <th>Help Duration</th>
+  <th>Wait Duration</th>
+</tr>
+</thead>
+<tbody>
+{{#each reports}}
+<tr>
+  <th scope="row">{{caseNumber}}</th>
+  <td>{{customer}}</td>
+  <td>{{reportDuration progHour progMin progSec}}</td>
+  <td>{{reportDuration helpHour helpMin helpSec}}</td>
+  <td>{{reportDuration waitHour waitMin waitSec}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+</template>

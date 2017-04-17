@@ -1,0 +1,17 @@
+<template name="admin">
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 main">
+              {{> adminSideMenu}}
+              {{> createUser}}
+            </div>
+        </div>
+  </div>
+</template>
+<template name="adminSideMenu">
+  <div class="col-sm-2 col-md-1 sidebar ">
+        <ul class="nav nav-sidebar">
+          <li><a href="#" id="AdmincreateUser" class="js-admin-createUser">Create User</a></li>
+        </ul>
+      </div>
+</template>

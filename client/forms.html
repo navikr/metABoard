@@ -1,0 +1,116 @@
+<!-- Create User Form -->
+<template name="createUser">
+  <div class="modal fade" id="user-add-form">
+   <div class="modal-dialog  modal-sm">
+       <div class="modal-content">
+         <div class="modal-header">
+           <div class="modal-title">User Details</div>
+          </div>
+         <div class="modal-body">
+             <form class="js-createUser">
+                   <p>
+                  <input type="text" name="userName" placeholder="User Name" required="true"/>
+                   </p>
+                   <p>
+                     <input type="email" name="email" placeholder="Email" required="true"/>
+                   </p>
+                    <p>
+                      <input type="password" name="password" placeholder="Password" required="true"/>
+                    </p>
+               </form>
+         </div>
+         <div class="modal-footer">
+           <button class="btn btn-success js-create-user">save</button>
+           <button class="btn btn-warning" data-dismiss="modal">cancel</button>
+         </div>
+      </div>
+   </div>
+  </div>
+</template>
+<!--Poststick add form -->
+<template name="card_add_form">
+   <div class="modal fade" id="card_add_form">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">Poststick Details
+            </div>
+           </div>
+          <div class="modal-body">
+              <form class="js-add-card">
+                    <input type="number" name="case" placeholder="Case Number" required="true"/>
+                    <input type="text" name="customer" placeholder="Customer" required="true"/>
+                    <button class="btn btn-success">save</button>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-warning" data-dismiss="modal">cancel</button>
+          </div>
+       </div>
+    </div>
+   </div>
+</template>
+<!-- Card dragging form-->
+<template name="cardDetailForm">
+  <div class="modal fade" id="cardDetailForm">
+   <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <div class="modal-title">Board Change Details
+           </div>
+          </div>
+         <div class="modal-body">
+
+
+             <form class="js-add-cardDetails">
+                {{#each CardDetail}}
+                  <p>
+                    <input type="label" name="caseId" disabled value="Case: {{caseNumber}}" />
+                    <input type="label" name="siteId" disabled value="Customer: {{customer}}"/>
+                   <input type="label" name="creator" disabled value="Created By: {{GetUser createdBy}}" />
+                  <br/>
+                     <br/>
+                  <textarea rows="4" cols="70" placeholder="Transfer comment" required="true" autofocus="true"></textarea>
+                  </p>
+                  <p>
+                     <select id="cardOwner" required="true">
+                         <option value="" selected disabled>Owner</option>
+                         <option>Fabrizio</option>
+                         <option>Maurizio</option>
+                         <option>Venkat</option>
+                       </select>
+                       <button class="btn btn-success">save</button>
+                      </p>
+                   {{/each}}
+               </form>
+         </div>
+         <div class="modal-footer">
+           <button class="btn btn-warning" data-dismiss="modal">cancel</button>
+         </div>
+      </div>
+   </div>
+  </div>
+</template>
+
+<template name="ImportCards">
+  <div class="modal fade" id="cards-import-form">
+   <div class="modal-dialog  modal-sm">
+       <div class="modal-content">
+         <div class="modal-header">
+           <div class="modal-title">Import Cards</div>
+          </div>
+         <div class="modal-body">
+             <form class="js-import-cards">
+                   <p>
+                  <input type="file" id="ImportCards" name="ImportCards" placeholder="File to import" required="true"/>
+                   </p>
+                  </form>
+         </div>
+         <div class="modal-footer">
+           <button class="btn btn-warning" data-dismiss="modal">cancel</button>
+         </div>
+      </div>
+   </div>
+  </div>
+</template>

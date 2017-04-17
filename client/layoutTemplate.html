@@ -1,0 +1,68 @@
+<head>
+  <title>Agile Board</title>
+</head>
+<body>
+
+</body>
+
+<template name="AgileBoardTemplate">
+{{> yield "ABHeader"}}
+{{> yield "ABBody"}}
+
+</template>
+
+<template name="topnavigation">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"> {{> loginButtons}}  &nbsp;&nbsp;&nbsp;&nbsp;Agile Board &nbsp;&nbsp;&nbsp;&nbsp;© Imisno Technologies 2013</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse in" aria-expanded="true">
+            <ul class="nav navbar-nav navbar-right">
+              {{#if currentUser}}
+              <li>
+                <button class="btn btn-success js-card-add">Posttick</button>
+              </li>
+              <li><a href="#" class="js-import-card-form">Import</a></li>
+
+              <li><a href="/overview">Overview</a></li>
+              <li><a href="/reports">Report</a></li>
+              <li>
+                <a href="/admin">Admin</a>
+              </li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </nav>
+</template>
+<template name="container">
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 main">
+              {{> board}}
+            </div>
+        </div>
+  </div>
+</template>
+
+<!-- Team Board -->
+<template name="board">
+  <div id="board">
+        {{> card_add_form}}
+        {{> cardDetailForm}}
+        {{> ImportCards}}
+        {{> progressBoard}}
+        {{> helpBoard}}
+        {{> waitBoard}}
+        {{> rightclickcontextmenu}}
+
+  </div><!-- closing of div of board-->
+</template>
